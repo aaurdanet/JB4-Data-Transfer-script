@@ -36,6 +36,7 @@ function getFromLoadsReport(driverID) {
   driverID = driverID.toString().trim();
   
   const sourceSpreadsheet = SpreadsheetApp.openById('1ZUQUjjNpyX9XnXHSGSX571WD4kL4G9MBfud54-7blPU');
+  // CHANGE LINE BELLOW TO SOURCE SHEET NAME
   const otherSheet = sourceSpreadsheet.getSheetByName("DANIEL A. BACKUP");
   
   const DRIVER_ID_COLUMN = 11; // Column K (1-based index)
@@ -160,10 +161,10 @@ try {
   const destinationSpreadsheet = SpreadsheetApp.openById('18L-u_NAfp6mVs8t2cmY_T8RwR963Ygl02E5NcxvSY2g');
   // Logger.log('Spreadsheet opened successfully');
   
-  const settlementSheet = destinationSpreadsheet.getSheetByName("Copy of Settlement Format");
+  const settlementSheet = destinationSpreadsheet.getSheetByName("Settlement Format");
   if (!settlementSheet) {
     Logger.log('Sheet not found');
-    throw new Error('Sheet "Copy of Settlement Format" does not exist');
+    throw new Error('Sheet "Settlement Format" does not exist');
   }
   // Logger.log('Sheet name: ' + settlementSheet.getName());
 
@@ -199,14 +200,14 @@ try {
   const destinationSpreadsheet = SpreadsheetApp.openById('18L-u_NAfp6mVs8t2cmY_T8RwR963Ygl02E5NcxvSY2g');
   // Logger.log('Spreadsheet opened successfully');
   
-  const settlementSheet = destinationSpreadsheet.getSheetByName("Copy of Settlement Format");
+  const settlementSheet = destinationSpreadsheet.getSheetByName("Settlement Format");
   if (!settlementSheet) {
     Logger.log('Sheet not found');
-    throw new Error('Sheet "Copy of Settlement Format" does not exist');
+    throw new Error('Sheet "Settlement Format" does not exist');
   }
   // Logger.log('Sheet name: ' + settlementSheet.getName());
   const startColumn = 4; // Start at column D
-  const startRow = 21; // Row number where rows will be inserted
+  const startRow = 22; // Row number where rows will be inserted
   const numberOfRows  = data.length
 
   const keys = Object.keys(data[0]);
